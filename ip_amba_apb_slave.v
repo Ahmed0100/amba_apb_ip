@@ -22,7 +22,7 @@ module ip_amba_apb_slave `IP_AMBA_APB_SLAVE_PARAM_DECL (
 
 localparam BASE_ADDR  = 0;
 reg [WORD_LENGTH-1:0] mem [2** MEM_DEPTH];
-
+//regs and wires decl
 reg PREADY_next;
 reg [PRDATA_width-1:0] PRDATA_next;
 reg PSLVERR_next;
@@ -31,7 +31,7 @@ reg [PRDATA_width-1:0] PRDATA_reg;
 reg PSLVERR_reg;
 reg [PWDATA_width-1:0] base_addr_reg,base_addr_next;
 reg [PWDATA_width-1:0] mem_write_data_next,mem_write_data_reg;
-
+//body
 always @(posedge PCLK or negedge PRESETn)
 begin
 	if(~PRESETn)
